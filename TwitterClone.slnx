@@ -1,0 +1,4 @@
+<Solution>
+  <Folder Name="/tests/" />
+  <Project Path="src/TwitterClone.Domain/TwitterClone.Domain.csproj" />
+</Solution>
