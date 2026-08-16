@@ -20,16 +20,17 @@ public sealed class LikeNotification : Notification
     LikedByUserId = likedBy;
     TweetId = tweetId;
   }
-
-
-  public void SetNotificationContent(
-    string likedBy,
-    string tweetContent
-  )
-  {
-    Content = $"{likedBy} liked your tweet: {tweetContent}";
-  }
  
+  public void SetContent(string content)
+  {
+    Content = content;
+  }
+  
+  public override string GetNotification()
+  {
+    return $"User with ID {LikedByUserId} liked your post.";
+  }
+  
   public override string DescribeRecord()
   {
     return $"""
@@ -38,5 +39,5 @@ public sealed class LikeNotification : Notification
       LikedByUserId: {LikedByUserId}
     """;
   }
-  
-}
+
+} 

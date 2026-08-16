@@ -21,14 +21,14 @@ public sealed class CommentNotification : Notification
     TweetId = tweetId;
   }
 
-
-  public void SetNotificationContent(
-    string commentedBy,
-    string tweet,
-    string comment
-  )
+  public void SetContent(string content)
   {
-    Content = $"{commentedBy} commented in your tweet: {tweet}\n{comment}";
+    Content = content;
+  }
+  
+  public override string GetNotification()
+  {
+    return $"User with userID:{CommentedByUserId} comented your tweet with tweetID:{TweetId}";
   }
 
   public override string DescribeRecord()
@@ -39,5 +39,5 @@ public sealed class CommentNotification : Notification
       CommentedByUserID: {CommentedByUserId}
     """;
   }
-  
+
 }

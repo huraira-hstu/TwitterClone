@@ -34,4 +34,7 @@ public abstract class Notification : BaseEntity
       Type: {Type}
     """;
   }
+
+  public abstract string GetNotification();
+  
 }

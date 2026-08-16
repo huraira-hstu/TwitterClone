@@ -15,10 +15,21 @@ public sealed class SystemNotification : Notification
   {
   }
 
-  public void SetNotificationContent(string content)
+  public void SetContent(string content)
   {
     Content = content;
   }
 
+  public override string GetNotification()
+  {
+    return $"System notification: Unknown Error";
+  }
+
+  public override string DescribeRecord()
+  {
+    return $"""
+    {base.DescribeRecord()}
+    """;
+  }
 
 }
