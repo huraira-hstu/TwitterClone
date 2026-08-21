@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using TwitterClone.Domain.Entities.Notifications;
 
 namespace TwitterClone.Test;

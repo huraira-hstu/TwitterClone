@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 namespace TwitterClone.Domain.Entities;
 
 public class Tweet:BaseEntity
@@ -5,6 +6,17 @@ public class Tweet:BaseEntity
   public Guid UserId { get; private set; }
   public string Content { get; private set; }
   
+=======
+using TwitterClone.Domain.Entities.Interfaces;
+
+namespace TwitterClone.Domain.Entities;
+
+public class Tweet:BaseEntity, ILikable
+{
+  public Guid UserId { get; private set; }
+  public string Content { get; private set; }
+
+>>>>>>> ea5610e (class-10)
   public Tweet(
     Guid tweetId,
     Guid userId,
@@ -19,6 +31,18 @@ public class Tweet:BaseEntity
     Content = content;
   }
 
+<<<<<<< HEAD
+=======
+  public bool CanBeLiked()
+  {
+    if(string.IsNullOrWhiteSpace(Content))
+    {
+      return false;
+    }
+    return true;
+  }
+
+>>>>>>> ea5610e (class-10)
   public override string DescribeRecord()
   {
     return $"""
