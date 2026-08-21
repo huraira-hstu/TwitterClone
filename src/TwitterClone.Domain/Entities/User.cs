@@ -1,25 +1,15 @@
-<<<<<<< HEAD
+
 namespace TwitterClone.Domain.Entities;
 
 public class User : BaseEntity
-=======
-using TwitterClone.Domain.Entities.Interfaces;
-
-namespace TwitterClone.Domain.Entities;
-
-public class User : BaseEntity, IFollowable, INotifiable
->>>>>>> ea5610e (class-10)
 {
   public string Email {get; private set;}
   public string FullName { get; private set; }
   public string NickName { get; private set; }
 
-<<<<<<< HEAD
-=======
   private List<Guid> _followers = new List<Guid>();
-  private List<Guid> _inComingNotifications = new List<Guid>();
+  private List<Guid> _incomingNotificatoins = new List<Guid>();
 
->>>>>>> ea5610e (class-10)
 
   public User(
     Guid id,
@@ -37,9 +27,7 @@ public class User : BaseEntity, IFollowable, INotifiable
     NickName = nickName;
   }
 
-<<<<<<< HEAD
-    public override string DescribeRecord()
-=======
+ 
   public void Follow(Guid userId)
   {
     if(!_followers.Contains(userId))
@@ -55,14 +43,13 @@ public class User : BaseEntity, IFollowable, INotifiable
 
   public void AddNotification(Guid notificationId)
   {
-    if (!_inComingNotifications.Contains(notificationId))
+    if (!_incomingNotificatoins.Contains(notificationId))
     {
-      _inComingNotifications.Add(notificationId);
+      _incomingNotificatoins.Add(notificationId);
     }
   }
 
   public override string DescribeRecord()
->>>>>>> ea5610e (class-10)
   {
     return $"""
     {base.DescribeRecord()}
