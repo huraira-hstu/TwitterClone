@@ -9,10 +9,8 @@ public class Class10Test
 
   public void ProcessLike(ILikable likable)
   {
-
-    Console.WriteLine(likable.CanBeLiked());
-    var like = Like.CreateLikeFor(likable, Guid.NewGuid());
-    Console.WriteLine(like.DescribeRecord());
+    var msg = (likable.CanBeLiked())? "Tweet can be liked": "Tweet cannot be liked";
+    Console.WriteLine(msg);
   }
 
   public void Run()
