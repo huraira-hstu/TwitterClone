@@ -1,3 +1,5 @@
+using TwitterClone.Domain.Entities.Interfaces;
+
 namespace TwitterClone.Domain.Entities;
 
 public class Like:BaseEntity
